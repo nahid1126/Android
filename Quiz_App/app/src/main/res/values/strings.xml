@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Quiz App</string>
+    <string name="todo">Image</string>
+    <string name="questions">Questions Goes Here</string>
+    <string name="button">true</string>
+    <string name="falsebutton">false</string>
+    <string name="perv_button">prev</string>
+    <string name="nxt_button">next</string>
+
+
+    <string name="first">Bangladesh become an independent country in 1971?</string>
+    <string name="second">Dinajpur district of Bangladesh was part of Assam?</string>
+    <string name="third">Awami League won the elections in Pakistan \nin 1970 and was not allowed to form government?</string>
+    <string name="fourth">Zia-ur-Rahman was assassinated on 15 August 1975?</string>
+    <string name="fifth">Siraj-ud-Daulah defeated in the battle of Plassey?</string>
+    <string name="sixth">Bhutan is the second country to recognize Bangladesh?</string>
+    <string name="seventh">Tista river of Bangladesh originates in Tibet?</string>
+    <string name="right">That\'s Right Ans</string>
+    <string name="wrong">That\'s Wrong Ans</string>
+
+</resources>
