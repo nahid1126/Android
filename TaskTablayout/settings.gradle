@@ -1,0 +1,2 @@
+rootProject.name = "TaskTablayout"
+include ':app'
