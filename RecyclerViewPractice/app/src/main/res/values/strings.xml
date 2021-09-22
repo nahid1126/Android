@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">RecyclerViewPractice</string>
+    <string name="enter_name">Enter Name</string>
+    <string name="enter_id">Enter ID</string>
+    <string name="enter_mail">Enter Mail</string>
+    <string name="enter_phone">Enter Phone</string>
+    <string name="enter_department">Enter Department</string>
+    <string name="submit">Submit</string>
+    <string name="name">Name</string>
+    <string name="date_of_birth">date OF Birth</string>
+    <string name="set_date">set date</string>
+    <string name="select_division">Select division</string>
+    <string name="show_list">Show List</string>
+    <string name="update">Update</string>
+    <!--
+    <string-array name="division">
+        <item>Barisal</item>
+        <item>Chittagong</item>
+        <item>Dhaka</item>
+        <item>Khulna</item>
+        <item>Mymensingh</item>
+        <item>Rajshahi</item>
+        <item>Rangpur</item>
+        <item>Sylhet</item>
+    </string-array> -->
+</resources>
