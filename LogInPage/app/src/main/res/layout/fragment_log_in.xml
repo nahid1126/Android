@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFC107"
+    tools:context=".MainActivity">
+
+   <FrameLayout
+       android:id="@+id/fragmentFrameLayout"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+       <androidx.constraintlayout.widget.ConstraintLayout
+           android:id="@+id/layoutOne"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:layout_margin="10dp"
+           android:background="@drawable/cornershape"
+           android:backgroundTint="@color/white"
+           tools:ignore="MissingConstraints">
+
+           <EditText
+               android:id="@+id/txtUserName"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_margin="10dp"
+               android:hint="User Name"
+               app:layout_constraintBottom_toTopOf="@id/txtUserPass"
+               app:layout_constraintEnd_toEndOf="@+id/layoutOne"
+               app:layout_constraintStart_toStartOf="@+id/layoutOne" />
+
+           <EditText
+               android:id="@+id/txtUserPass"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_margin="10dp"
+               android:hint="Enter Password"
+               android:inputType="textPassword"
+               app:layout_constraintBottom_toTopOf="@id/btnLogin"
+               app:layout_constraintEnd_toEndOf="@+id/layoutOne"
+               app:layout_constraintStart_toStartOf="@+id/layoutOne" />
+
+
+           <Button
+               android:id="@+id/btnLogin"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:background="@drawable/cornershape"
+               android:text="login"
+               app:layout_constraintBottom_toBottomOf="@+id/layoutOne"
+               app:layout_constraintEnd_toEndOf="@+id/layoutOne"
+               app:layout_constraintStart_toStartOf="@+id/layoutOne"
+               app:layout_constraintTop_toTopOf="@id/layoutOne" />
+
+       </androidx.constraintlayout.widget.ConstraintLayout>
+   </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
