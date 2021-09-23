@@ -1,5 +1,9 @@
 package com.example.recyclerviewpractice;
 
+import android.os.Build;
+
+import androidx.annotation.RequiresApi;
+
 import com.example.recyclerviewpractice.model.StudentModel;
 
 import java.util.ArrayList;
@@ -7,14 +11,13 @@ import java.util.List;
 
 public class StudentRepository {
     static List<StudentModel> studentModelList = new ArrayList<>();
-    public static void setStudentModelList (StudentModel studentModel){
-        studentModelList.add(studentModel);
+
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    public int getIdSum(){
+        return studentModelList
+                .stream()
+                .mapToInt(StudentModel::getStudentId)
+                .sum();
     }
 
-    public static List<StudentModel> getStudentModelList(){
-        if(studentModelList.size() >0){
-            return studentModelList;
-        }
-        return studentModelList;
-    }
 }

@@ -147,7 +147,8 @@ public class MainActivity extends AppCompatActivity {
         divisionList.add("Rangpur");
         divisionList.add("Sylhet");
 
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, divisionList);
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this,
+                R.layout.support_simple_spinner_dropdown_item, divisionList);
         divSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {

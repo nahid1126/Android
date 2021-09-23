@@ -32,13 +32,13 @@ public class UpdateDialog extends DialogFragment {
     @BindView(R.id.btnUpdate)
     Button btnUpdate;
 
-    public void setUpdateDialogInterface(UpdateDialogInterface updateDialogInterface) {
-        this.updateDialogInterface = updateDialogInterface;
-    }
-
 
     private UpdateDialogInterface updateDialogInterface;
     private StudentModel studentModel;
+
+    public void setUpdateDialogInterface(UpdateDialogInterface updateDialogInterface) {
+        this.updateDialogInterface = updateDialogInterface;
+    }
 
     public UpdateDialog(StudentModel studentModel) {
         this.studentModel = studentModel;
