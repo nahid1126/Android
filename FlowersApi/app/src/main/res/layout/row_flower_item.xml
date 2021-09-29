@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="6dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="6dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glOne"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".35" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glTwo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="1" />
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/flowerImgView"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_launcher_foreground"
+            app:actualImageScaleType="fitXY"
+            app:layout_constraintBottom_toTopOf="@+id/glTwo"
+            app:layout_constraintEnd_toStartOf="@+id/glOne"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/innerLayout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/glTwo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/glOne"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_margin="8dp"
+            tools:ignore="MissingConstraints">
+
+            <TextView
+                android:id="@+id/txtName"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/innerLayout"
+                app:layout_constraintEnd_toEndOf="@+id/innerLayout"
+                app:layout_constraintBottom_toTopOf="@+id/txtCategory"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/txtCategory"
+                android:textSize="18sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/innerLayout"
+                app:layout_constraintEnd_toEndOf="@+id/innerLayout"
+                app:layout_constraintBottom_toBottomOf="@+id/innerLayout"
+                app:layout_constraintTop_toTopOf="@+id/innerLayout"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/txtPrice"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/innerLayout"
+                app:layout_constraintEnd_toEndOf="@+id/innerLayout"
+               app:layout_constraintTop_toBottomOf="@+id/txtCategory"
+                tools:ignore="MissingConstraints" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
