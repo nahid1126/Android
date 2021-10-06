@@ -15,11 +15,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         StoreData storeData = new StoreData(this);
-        if (storeData.getUserName().equals("") || storeData.getUserPass().equals("")){
+        if (storeData.getUserName().equals("") || storeData.getUserPass().equals("")) {
             getSupportFragmentManager().beginTransaction().add(R.id.frameLayout,
                     new LogInFragment()).commit();
-        }
-        else {
+        } else {
             getSupportFragmentManager().beginTransaction().add(R.id.frameLayout,
                     new DashBoardFragment()).commit();
 
