@@ -35,29 +35,29 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.ViewHold
 
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new ViewHolder(LayoutInflater.from(context).inflate(R.layout.row_student_item,parent,
+        return new ViewHolder(LayoutInflater.from(context).inflate(R.layout.row_student_item, parent,
                 false));
     }
 
     @Override
     public void onBindViewHolder(@NonNull StudentAdapter.ViewHolder holder, int position) {
-        StudentModel studentModel=studentAdapterList.get(position);
+        StudentModel studentModel = studentAdapterList.get(position);
 
         holder.txtStudentName.setText(studentModel.getStudentName());
-        holder.txtStudentID.setText(studentModel.getStudentId()+"");
+        holder.txtStudentID.setText(studentModel.getStudentId() + "");
 
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                studentDetailsInterface.onClickItem(position,studentModel);
+                studentDetailsInterface.onClickItem(position, studentModel);
             }
 
         });
         holder.menuIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                studentDetailsInterface.onMenuButtonClick(position,studentModel,v);
+                studentDetailsInterface.onMenuButtonClick(position, studentModel, v);
             }
         });
     }
