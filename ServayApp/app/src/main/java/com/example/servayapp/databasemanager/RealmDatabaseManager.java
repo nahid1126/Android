@@ -22,27 +22,24 @@ public class RealmDatabaseManager {
         if (realm == null) {
             realm = Realm.getDefaultInstance();
         }
-        realm.executeTransaction(new Realm.Transaction() {
-            @Override
-            public void execute(Realm realm) {
-                try {
-                    Log.d(TAG, "execute: "+surveyModel.toString());
-                    realm.copyToRealmOrUpdate(surveyModel);
-                } catch (Exception e) {
-                    Log.e(TAG, "execute: ", e);
-                }
+        realm.executeTransaction(realm -> {
+            try {
+                Log.d(TAG, "execute: " + surveyModel.toString());
+                realm.copyToRealmOrUpdate(surveyModel);
+            } catch (Exception e) {
+                Log.e(TAG, "execute: ", e);
             }
         });
     }
 
-    public static List<SurveyModel> getSurveyModelList(){
-        realm=Realm.getDefaultInstance();
+    public static List<SurveyModel> getSurveyModelList() {
+        realm = Realm.getDefaultInstance();
         try {
             //return realm.copyFromRealm(realm.where(StudentModel.class).findAll());
-            RealmResults<SurveyModel> surveyModels =realm.where(SurveyModel.class).findAll();
+            RealmResults<SurveyModel> surveyModels = realm.where(SurveyModel.class).findAll();
             return surveyModels;
-        }catch (Exception e){
-            Log.d(TAG,"Insert"+e);
+        } catch (Exception e) {
+            Log.d(TAG, "Insert" + e);
         }
         return null;
     }
