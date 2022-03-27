@@ -9,15 +9,17 @@ import io.realm.annotations.PrimaryKey;
 public class SurveyModel extends RealmObject implements Parcelable {
 
     @PrimaryKey
+    private int id;
     private String surveyHomeDist;
-    private String surveyName, surveyEducation, surveyDOB, surveyArea, surveyKids, surveyHouse;
+    private String surveyName, surveyEducation, surveyDOB, surveyArea, surveyKids, surveyHouse,
+            currentTime,imagePath;
 
     public SurveyModel() {
     }
 
-    public SurveyModel(String surveyHomeDist, String surveyName,
-                       String surveyEducation, String surveyDOB, String surveyArea,
-                       String surveyKids, String surveyHouse) {
+    public SurveyModel(int id, String surveyHomeDist, String surveyName, String surveyEducation,
+                       String surveyDOB, String surveyArea, String surveyKids, String surveyHouse, String currentTime, String imagePath) {
+        this.id = id;
         this.surveyHomeDist = surveyHomeDist;
         this.surveyName = surveyName;
         this.surveyEducation = surveyEducation;
@@ -25,9 +27,12 @@ public class SurveyModel extends RealmObject implements Parcelable {
         this.surveyArea = surveyArea;
         this.surveyKids = surveyKids;
         this.surveyHouse = surveyHouse;
+        this.currentTime = currentTime;
+        this.imagePath = imagePath;
     }
 
     protected SurveyModel(Parcel in) {
+        id = in.readInt();
         surveyHomeDist = in.readString();
         surveyName = in.readString();
         surveyEducation = in.readString();
@@ -35,6 +40,8 @@ public class SurveyModel extends RealmObject implements Parcelable {
         surveyArea = in.readString();
         surveyKids = in.readString();
         surveyHouse = in.readString();
+        currentTime = in.readString();
+        imagePath = in.readString();
     }
 
     public static final Creator<SurveyModel> CREATOR = new Creator<SurveyModel>() {
@@ -48,6 +55,14 @@ public class SurveyModel extends RealmObject implements Parcelable {
             return new SurveyModel[size];
         }
     };
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getSurveyHomeDist() {
         return surveyHomeDist;
@@ -105,17 +120,20 @@ public class SurveyModel extends RealmObject implements Parcelable {
         this.surveyHouse = surveyHouse;
     }
 
-    @Override
-    public String toString() {
-        return "SurveyModel{" +
-                "surveyHomeDist='" + surveyHomeDist + '\'' +
-                ", surveyName='" + surveyName + '\'' +
-                ", surveyEducation='" + surveyEducation + '\'' +
-                ", surveyDOB='" + surveyDOB + '\'' +
-                ", surveyArea='" + surveyArea + '\'' +
-                ", surveyKids='" + surveyKids + '\'' +
-                ", surveyHouse='" + surveyHouse + '\'' +
-                '}';
+    public String getCurrentTime() {
+        return currentTime;
+    }
+
+    public void setCurrentTime(String currentTime) {
+        this.currentTime = currentTime;
+    }
+
+    public String getImagePath() {
+        return imagePath;
+    }
+
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
     }
 
     @Override
@@ -125,6 +143,7 @@ public class SurveyModel extends RealmObject implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(id);
         dest.writeString(surveyHomeDist);
         dest.writeString(surveyName);
         dest.writeString(surveyEducation);
@@ -132,5 +151,23 @@ public class SurveyModel extends RealmObject implements Parcelable {
         dest.writeString(surveyArea);
         dest.writeString(surveyKids);
         dest.writeString(surveyHouse);
+        dest.writeString(currentTime);
+        dest.writeString(imagePath);
+    }
+
+    @Override
+    public String toString() {
+        return "SurveyModel{" +
+                "id=" + id +
+                ", surveyHomeDist='" + surveyHomeDist + '\'' +
+                ", surveyName='" + surveyName + '\'' +
+                ", surveyEducation='" + surveyEducation + '\'' +
+                ", surveyDOB='" + surveyDOB + '\'' +
+                ", surveyArea='" + surveyArea + '\'' +
+                ", surveyKids='" + surveyKids + '\'' +
+                ", surveyHouse='" + surveyHouse + '\'' +
+                ", currentTime='" + currentTime + '\'' +
+                ", imagePath='" + imagePath + '\'' +
+                '}';
     }
 }

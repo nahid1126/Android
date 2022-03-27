@@ -18,21 +18,24 @@ public class RealmDatabaseManager {
         realm = Realm.getDefaultInstance();
     }
 
-    public static void insertSurveyModel(SurveyModel surveyModel) {
+    public void insertSurveyModel(SurveyModel surveyModel) {
         if (realm == null) {
             realm = Realm.getDefaultInstance();
         }
-        realm.executeTransaction(realm -> {
-            try {
-                Log.d(TAG, "execute: " + surveyModel.toString());
-                realm.copyToRealmOrUpdate(surveyModel);
-            } catch (Exception e) {
-                Log.e(TAG, "execute: ", e);
+        realm.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                try {
+                    Log.d(TAG, "execute: " + surveyModel.toString());
+                    realm.copyToRealmOrUpdate(surveyModel);
+                } catch (Exception e) {
+                    Log.e(TAG, "execute: ", e);
+                }
             }
         });
     }
 
-    public static List<SurveyModel> getSurveyModelList() {
+    public List<SurveyModel> getSurveyModelList() {
         realm = Realm.getDefaultInstance();
         try {
             //return realm.copyFromRealm(realm.where(StudentModel.class).findAll());
@@ -42,6 +45,34 @@ public class RealmDatabaseManager {
             Log.d(TAG, "Insert" + e);
         }
         return null;
+    }
+
+    public boolean updateSurveyModel(SurveyModel surveyModel,String name, String homeDist,
+                                     String edu, String dob, String area, String kids, String wife){
+        realm.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                SurveyModel updateModel =realm.where(SurveyModel.class)
+                        .equalTo("id",surveyModel.getId()).findFirst();
+                updateModel.setSurveyName(name);
+                updateModel.setSurveyHomeDist(homeDist);
+                updateModel.setSurveyEducation(edu);
+                updateModel.setSurveyDOB(dob);
+                updateModel.setSurveyArea(area);
+                updateModel.setSurveyKids(kids);
+                updateModel.setSurveyHouse(wife);
+            }
+        });
+        return true;
+    }
+    public void deleteSurveyModel(SurveyModel surveyModel){
+        realm.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                SurveyModel deleteModel=realm.where(SurveyModel.class).equalTo("id",surveyModel.getId()).findFirst();
+                deleteModel.deleteFromRealm();
+            }
+        });
     }
 
 }

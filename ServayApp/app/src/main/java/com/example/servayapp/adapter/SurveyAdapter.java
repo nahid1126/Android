@@ -2,6 +2,7 @@ package com.example.servayapp.adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,7 +34,6 @@ public class SurveyAdapter extends RecyclerView.Adapter<SurveyAdapter.ViewHolder
         this.surveyInterface = surveyInterface;
     }
 
-
     @NonNull
     @Override
     public SurveyAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -45,12 +45,31 @@ public class SurveyAdapter extends RecyclerView.Adapter<SurveyAdapter.ViewHolder
     public void onBindViewHolder(@NonNull SurveyAdapter.ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         SurveyModel surveyModel = surveyModelList.get(position);
 
-        holder.txtTitle.setText(surveyModel.getSurveyName());
-        holder.txtBody.setText(surveyModel.getSurveyHomeDist());
+        holder.txtName.setText(surveyModel.getSurveyName());
+        holder.txtDIST.setText(surveyModel.getSurveyHomeDist());
+        holder.txtEdu.setText(surveyModel.getSurveyEducation());
+        holder.txtdob.setText(surveyModel.getSurveyDOB());
+        holder.txtarea.setText(surveyModel.getSurveyArea());
+        holder.txtkids.setText(surveyModel.getSurveyKids());
+        holder.txtwife.setText(surveyModel.getSurveyHouse());
+        holder.txttime.setText(surveyModel.getCurrentTime());
 
-        holder.itemView.setOnClickListener(v -> surveyInterface.onClickItem(position, surveyModel));
+        String imagepath = surveyModel.getImagePath();
+        holder.imageItem.setImageBitmap(BitmapFactory.decodeFile(imagepath));
 
-        holder.menuIcon.setOnClickListener(v -> surveyInterface.onMenuButtonClick(position, surveyModel, v));
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                surveyInterface.onClickItem(position, surveyModel);
+            }
+        });
+
+        holder.menuIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                surveyInterface.onMenuButtonClick(position, surveyModel, v);
+            }
+        });
 
     }
 
@@ -61,12 +80,35 @@ public class SurveyAdapter extends RecyclerView.Adapter<SurveyAdapter.ViewHolder
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        @BindView(R.id.txtTitle)
-        TextView txtTitle;
-        @BindView(R.id.txtBody)
-        TextView txtBody;
+        @BindView(R.id.txtName)
+        TextView txtName;
+
+        @BindView(R.id.txtDIST)
+        TextView txtDIST;
+
+        @BindView(R.id.txtEdu)
+        TextView txtEdu;
+
+        @BindView(R.id.txtdob)
+        TextView txtdob;
+
+        @BindView(R.id.txtarea)
+        TextView txtarea;
+
+        @BindView(R.id.txtkids)
+        TextView txtkids;
+
+        @BindView(R.id.txtwife)
+        TextView txtwife;
+
+        @BindView(R.id.txttime)
+        TextView txttime;
+
         @BindView(R.id.menuIcon)
         ImageView menuIcon;
+
+        @BindView(R.id.imageItem)
+        ImageView imageItem;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);

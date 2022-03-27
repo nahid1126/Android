@@ -5,9 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="5dp"
-    app:cardBackgroundColor="#CDDC39"
+    app:cardBackgroundColor="#D5D5D5"
     app:cardCornerRadius="8dp"
-    app:cardElevation="3dp">
+    app:cardElevation="8dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -20,51 +20,118 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent=".7" />
+            app:layout_constraintGuide_percent=".6" />
 
         <TextView
-            android:id="@+id/txtTitle"
+            android:id="@+id/txtName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:text="name"
             android:textSize="18sp"
-            app:layout_constraintBottom_toTopOf="@+id/txtBody"
+            android:background="@drawable/outline_border"
             app:layout_constraintEnd_toEndOf="@+id/guidelineTwo"
             app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="MissingConstraints" />
+            app:layout_constraintTop_toTopOf="@+id/constraintLayout" />
 
         <TextView
-            android:id="@+id/txtBody"
+            android:id="@+id/txtDIST"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-            app:layout_constraintBottom_toBottomOf="@+id/constraintLayout"
+            android:text="dist"
+            android:background="@drawable/outline_border"
             app:layout_constraintEnd_toEndOf="@+id/guidelineTwo"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/constraintLayout"
-            tools:ignore="MissingConstraints" />
+            app:layout_constraintTop_toBottomOf="@+id/txtName" />
+
+        <TextView
+            android:id="@+id/txtEdu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="edu"
+            android:background="@drawable/outline_border"
+            app:layout_constraintEnd_toEndOf="@+id/guidelineTwo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtDIST" />
+
+        <TextView
+            android:id="@+id/txtdob"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="dob"
+            android:background="@drawable/outline_border"
+            app:layout_constraintTop_toBottomOf="@+id/txtEdu"
+            app:layout_constraintEnd_toEndOf="@+id/guidelineTwo"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/txtarea"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="dob"
+            android:background="@drawable/outline_border"
+            app:layout_constraintEnd_toEndOf="@+id/guidelineTwo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtdob" />
+
+        <TextView
+            android:id="@+id/txtkids"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="kids"
+            android:background="@drawable/outline_border"
+            app:layout_constraintEnd_toEndOf="@+id/guidelineTwo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtarea" />
+
+        <TextView
+            android:id="@+id/txtwife"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="wife"
+            android:background="@drawable/outline_border"
+            app:layout_constraintEnd_toEndOf="@+id/guidelineTwo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtkids" />
+
+        <TextView
+            android:id="@+id/txttime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="time"
+            android:background="@drawable/outline_border"
+            app:layout_constraintEnd_toEndOf="@+id/guidelineTwo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtwife" />
 
         <ImageView
             android:id="@+id/imageItem"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:scaleType="fitCenter"
+            android:scaleType="centerCrop"
             android:src="@drawable/dp"
+            android:background="@drawable/outline_border"
             app:layout_constraintBottom_toBottomOf="@+id/constraintLayout"
             app:layout_constraintEnd_toEndOf="@+id/constraintLayout"
             app:layout_constraintStart_toEndOf="@+id/guidelineTwo"
-            app:layout_constraintTop_toTopOf="@+id/constraintLayout"
-            tools:ignore="MissingConstraints" />
+            app:layout_constraintTop_toTopOf="@+id/constraintLayout" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/menuIcon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_menu"
-            app:layout_constraintBottom_toBottomOf="@+id/txtBody"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtBody"
+            app:layout_constraintBottom_toBottomOf="@+id/txttime"
+            app:layout_constraintTop_toTopOf="@+id/txtName"
             tools:ignore="MissingConstraints" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>

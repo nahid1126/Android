@@ -10,16 +10,20 @@ import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 import com.example.servayapp.R;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class SplashActivity extends AppCompatActivity {
 
+    @BindView(R.id.splashImg)
     ImageView splashImg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+        ButterKnife.bind(this);
 
-        splashImg = findViewById(R.id.splashImg);
         YoYo.with(Techniques.BounceInDown)
                 .duration(3000)
                 .onEnd(animator -> {
