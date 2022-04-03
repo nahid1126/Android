@@ -1,0 +1,10 @@
+com/example/mvvm_practice/BuildConfig.java
+ com.example.mvvm_practice.BuildConfig
+com/example/mvvm_practice/databinding/ActivityMainBinding.java
+ com.example.mvvm_practice.databinding.ActivityMainBinding
+com/example/mvvm_practice/MainActivity.java
+ com.example.mvvm_practice.MainActivity
+ com.example.mvvm_practice.MainActivity$1
+ com.example.mvvm_practice.MainActivity$2
+com/example/mvvm_practice/MainActivityViewModel.java
+ com.example.mvvm_practice.MainActivityViewModel
