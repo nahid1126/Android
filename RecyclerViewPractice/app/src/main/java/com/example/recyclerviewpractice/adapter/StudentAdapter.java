@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.recyclerviewpractice.R;
 import com.example.recyclerviewpractice.activity.StudentListActivity;
 import com.example.recyclerviewpractice.model.StudentModel;
+import com.ramotion.foldingcell.FoldingCell;
 
 import java.util.List;
 
@@ -43,17 +44,27 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.ViewHold
     public void onBindViewHolder(@NonNull StudentAdapter.ViewHolder holder, int position) {
         StudentModel studentModel = studentAdapterList.get(position);
 
+        if(studentModel == null) {
+            return;
+        }
         holder.txtStudentName.setText(studentModel.getStudentName());
         holder.txtStudentID.setText(studentModel.getStudentId() + "");
 
+        holder.txtStudentName2.setText("Name : " + studentModel.getStudentName());
+        holder.txtStudentID2.setText("ID : " + studentModel.getStudentId() + "");
+        holder.txtStudentMail.setText("Mail : " + studentModel.getStudentMail());
+        holder.txtStudentPhone.setText("Phone : " + studentModel.getStudentPhone());
+        holder.txtStudentDept.setText("Dept : " + studentModel.getStudentDept());
+        holder.txtStudentDateOfBirth.setText("DOF : " + studentModel.getStudentDateOfBirth());
+        holder.txtStudentDivision.setText("Division : " + studentModel.getDivisonadd());
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
+        holder.foldingCell.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                studentDetailsInterface.onClickItem(position, studentModel);
+                holder.foldingCell.toggle(false);
             }
-
         });
+
         holder.menuIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -74,6 +85,24 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.ViewHold
         TextView txtStudentID;
         @BindView(R.id.menuIcon)
         ImageView menuIcon;
+
+        @BindView(R.id.txtStudentName2)
+        TextView txtStudentName2;
+        @BindView(R.id.txtStudentID2)
+        TextView txtStudentID2;
+        @BindView(R.id.txtStudentMail)
+        TextView txtStudentMail;
+        @BindView(R.id.txtStudentPhone)
+        TextView txtStudentPhone;
+        @BindView(R.id.txtStudentDept)
+        TextView txtStudentDept;
+        @BindView(R.id.txtStudentDateOfBirth)
+        TextView txtStudentDateOfBirth;
+        @BindView(R.id.txtStudentDivision)
+        TextView txtStudentDivision;
+
+        @BindView(R.id.folding_cell)
+        FoldingCell foldingCell;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);

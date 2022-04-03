@@ -12,7 +12,6 @@
         android:theme="@style/Theme.RecyclerViewPractice"
         >
         <activity android:name=".activity.StudentListActivity"/>
-        <activity android:name=".activity.StudentDetailsActivity" />
 
         <activity android:name=".activity.MainActivity">
             <intent-filter>

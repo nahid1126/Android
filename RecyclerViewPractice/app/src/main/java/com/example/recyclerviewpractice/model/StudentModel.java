@@ -6,16 +6,15 @@ import android.os.Parcelable;
 import io.realm.RealmObject;
 import io.realm.annotations.PrimaryKey;
 
-public class StudentModel extends RealmObject implements Parcelable {
+public class StudentModel extends RealmObject implements Parcelable{
     @PrimaryKey
     private int studentId;
-    private String studentName, studentMail, studentPhone, studentDept, studentDateOfBirth, divisonadd;
+    private String studentName, studentMail, studentPhone, studentDept, studentDateOfBirth,divisonadd;
 
     public StudentModel() {
     }
 
-    public StudentModel(int studentId, String studentName, String studentMail, String studentPhone,
-                        String studentDept, String studentDateOfBirth, String divisonadd) {
+    public StudentModel(int studentId, String studentName, String studentMail, String studentPhone, String studentDept, String studentDateOfBirth, String divisonadd) {
         this.studentId = studentId;
         this.studentName = studentName;
         this.studentMail = studentMail;

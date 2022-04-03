@@ -45,16 +45,22 @@ public class MainActivity extends AppCompatActivity {
 
     @BindView(R.id.txtStudentName)
     EditText txtStudentName;
+
     @BindView(R.id.txtStudentID)
     EditText txtStudentID;
+
     @BindView(R.id.txtStudentMail)
     EditText txtStudentMail;
+
     @BindView(R.id.txtStudentPhone)
     EditText txtStudentPhone;
+
     @BindView(R.id.txtStudentDept)
     EditText txtStudentDept;
+
     @BindView(R.id.txtStudentDateOfBirth)
     TextView txtStudentDateOfBirth;
+
     //spinner
     @BindView(R.id.divSpinner)
     Spinner divSpinner;

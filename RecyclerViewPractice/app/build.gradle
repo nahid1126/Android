@@ -51,4 +51,7 @@ dependencies {
 
     // Material Dialog Library
     implementation 'com.shreyaspatil:MaterialDialog:2.0'
+//folding cell
+    implementation 'com.ramotion.foldingcell:folding-cell:1.2.3'
+
 }
