@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "486447716797",
+    "project_id": "pushnotification-2b52b",
+    "storage_bucket": "pushnotification-2b52b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:486447716797:android:65b6bd88e015cfad855ad4",
+        "android_client_info": {
+          "package_name": "com.nahid.pushnotification"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "486447716797-r5dsevr985lkaksv37p40cl49eo5i0m3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWNOSGkLdzYWhSBakUaf7FbI3Th4MWn9o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "486447716797-r5dsevr985lkaksv37p40cl49eo5i0m3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
